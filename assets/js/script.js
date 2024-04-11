@@ -88,12 +88,43 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 function viewPassword() {
-    const passwordSahesi = document.getElementById("password");
-    if (password.type === "password") {
-      passwordSahesi.type = "text";
-    } else {
-      passwordSahesi.type = "password";
+    const passwordSahesi = document.getElementById("password")
+    const passwordSahesi2 = document.getElementById("password2")
+    if (passwordSahesi.type === "password") {
+      passwordSahesi.type = "text"
+    } 
+     else {
+      passwordSahesi.type = "password"
     }
+    if (passwordSahesi2.type === "password") {
+        passwordSahesi2.type = "text"
+      } 
+       else {
+        passwordSahesi2.type = "password"
+      }
   }
+  
 
-document.querySelector(".fa-eye").addEventListener("click", viewPassword)
+document.querySelector("#eye1").addEventListener("click", viewPassword)
+document.querySelector("#eye2").addEventListener("click", viewPassword)
+
+
+document.getElementById("form").addEventListener("submit", function(event){
+    event.preventDefault()
+    const username = document.getElementById("username").value
+    const password = document.getElementById("password").value
+    const succes = false
+    if (succes) {
+      
+    } 
+    else {
+        Toastify({
+            text: "Girish ugursuz. Tekrar cehd edin",
+            duration: 3000, 
+            gravity: "top", 
+            position: "right",
+            backgroundColor: "linear-gradient(to right, #ff416c, #ff4b2b)",
+        }).showToast();
+    
+}
+});
